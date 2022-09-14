@@ -1,0 +1,130 @@
+.team {
+    background: $bg-color-secondary;
+    @media screen and (max-width: 767px){
+        min-width: 480px;
+    }
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.team__container {
+    @extend %container-mobile;
+    @media screen and (max-width: 767px) {
+        width: 480px;
+    }
+
+    @media screen and (max-width: 1199px) {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+
+    @media screen and (min-width: 768px) and (max-width: 1199px) {
+        width: 768px;
+    }
+    @media screen and (min-width: 1200px) {
+        width: 1200px;
+        padding-top: 94px;
+        padding-bottom: 94px;
+    }
+}
+
+.team__title {
+    text-align: center;
+    
+    @media screen and (max-width: 1199px){
+        font-weight: 700;
+        font-size: 28px;
+        line-height: 1.17;
+        margin-bottom: 30px;
+    }
+    @media screen and (min-width: 1200px) {
+        font-size: 36px;
+        line-height: 1.16;
+        margin-bottom: 50px;
+    }     
+}
+
+.peoples {
+    @media screen and (min-width: 768px) {
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
+
+.peoples__name {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.19;
+    margin-top: 30px;
+    text-align: center;
+}
+
+.peoples__text {
+    margin-bottom: 16px;
+    margin-top: 10px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.19;
+    text-align: center;
+}
+
+.peoples__list {
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 0px 0px 4px 4px;
+    background: $bg-color-primary;
+    padding-bottom: 24px;
+    margin-bottom: 30px;
+    @media screen and (max-width: 767px) {
+        margin-bottom: 30px;
+    }
+
+    @media screen and (min-width: 768px) and (max-width: 1199px) {
+        width: 354px;
+
+        &:nth-child(2n+1) {
+            margin-right: 30px;
+        }
+    }
+    @media screen and (min-width: 1200px) {
+        width: 270px;
+
+        &:not(:last-child) {
+            margin-right: 30px;
+        }
+    }
+}
+
+.peoples__img {
+    width: 100%;
+}
+
+.peoples__contacts {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.peoples__links {
+    display: flex;
+    padding: 12px;
+    border-radius: 50%;
+    margin-right: 10px;
+    fill: $color-light;
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    &:last-child {
+        margin-right: 0;
+    }
+
+    &:focus,
+    &:hover {
+        background-color: $color-active;
+        fill: $color-inverse;
+    }
+}
+
+.peoples__networks {
+    display: flex;
+    width: 20px;
+    height: 20px;
+}

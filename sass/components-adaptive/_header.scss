@@ -1,0 +1,322 @@
+.header {
+    background-color: #ffffff;
+    border-bottom: 1px solid #ECECEC;
+}
+
+.header__block {
+    @extend %container-mobile;
+
+    @media screen and (max-width: 767px) {
+        position: relative;
+        width: 480px;
+    }
+
+    @media screen and (min-width: 768px) and (max-width: 1199px) {
+        width: 768px;
+    }
+    @media screen and (min-width: 1200px) {
+        width: 1200px;
+        display: flex;
+        align-items: center;
+    }
+}
+
+.header__nav {
+    display: flex;
+    align-items: center; 
+
+    @media screen and (max-width: 767px){
+    justify-content: space-between;
+    }  
+}
+
+.header__logo {
+    @media screen and (max-width: 767px){
+        padding-top: 16px;
+        padding-bottom: 16px;   
+    }
+
+    &.is-visible {
+        opacity: 0;
+    }
+    @media screen and (min-width: 1200px){
+        padding: 25px 0;
+    }
+}
+
+.header__button {
+    display: inline-flex;
+    margin: 0;
+    padding: 0;
+    border: 0px;
+    background-color: transparent;
+
+    & .header__icon-close {
+        display: none;
+    }
+
+    &.is-open .header__icon-close {
+        display: block;
+    }
+
+    &.is-open .header__icon-menu{
+        display: none;
+    }   
+
+    @media screen and (min-width: 768px){
+        display: none;
+    }       
+}
+
+
+
+.header__logo-img-color {
+    color: $color-active
+}
+
+.header__logo-img {
+    @extend %logo;
+    color: $color-darkness;
+}
+
+.site-nav {
+    @extend %flex-center;  
+
+    @media screen and (max-width: 767px) {
+        display: none;
+
+        position: absolute;
+        top: 60px;
+        left: 0;
+        right: 0;
+
+        padding-bottom: 280px;
+    
+        background-color: $bg-color-primary;
+    
+        &.is-open {
+            display: block;
+        }
+
+        z-index: 5;
+    }   
+    @media screen and (min-width: 1200px){
+        justify-content: space-between;
+    }
+}
+
+.site-nav__item {
+    @media screen and (max-width: 767px){
+        margin-left: 40px;
+        
+            li:not(:last-child) {
+                margin-bottom: 32px;
+            }
+    }
+    @media screen and (min-width: 768px) {
+        display: flex;
+        li:not(:last-child) {
+                margin-right: 50px;
+            }
+    }
+    @media screen and (min-width: 768px) and (max-width: 1199px) {
+        margin-left: 88px;
+    }
+    @media screen and (min-width: 1200px) {
+        display: flex;
+        margin-left: 93px;
+    }
+}
+
+.site-nav__link {
+    color: $color-title;
+    letter-spacing: 0.02em;
+
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    @media screen and (max-width: 767px) {
+        font-weight: 500;
+        font-size: 40px;
+        line-height: 1.17;
+    }
+    @media screen and (min-width: 768px){
+        font-size: 14px;
+        font-weight: 500;
+        padding-top: 32px;
+        padding-bottom: 32px;
+    }
+
+    &:hover,
+    &:focus {
+        color: $color-active;
+    }
+}
+
+
+
+.site-nav__list {
+    position: relative;
+}
+
+.contacts {
+    @media screen and (max-width: 767px){
+        margin-top: 302px;
+        margin-left: 40px;
+    }
+    @media screen and (min-width: 768px) {
+        display: flex;
+    }
+    @media screen and (min-width: 768px) and (max-width: 1199px){
+        flex-wrap: wrap;
+        justify-content: end;
+        flex-direction: column-reverse;
+        margin-left: 60px;
+    } 
+    @media screen and (min-width: 1200px) {
+        align-items: center;
+        margin-left: 315px;
+    }
+}
+.contacts__item {
+
+    @media screen and (max-width: 767px) {
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 1.16px; 
+        .contacts__text--size {
+        font-size: 34px;
+        line-height: 1.17;
+        }
+    }
+
+    font-size: 14px;
+    font-style: 500;
+    fill: $color-text;
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    
+    @media screen and (min-width: 768px) {
+
+        &:hover,
+        &:focus {
+            color: $color-active;
+            fill: $color-active;
+        }
+
+        &:hover .contacts__text,
+        &:focus .contacts__text {
+            color: $color-active;
+            fill: $color-active;
+        }
+    }
+   @media screen and (min-width: 1200px){
+        display: flex;
+        align-items: center;
+   }
+}
+
+.contacts__img-mail {
+    width: 16px;
+    height: 12px;
+
+    @media screen and (max-width: 767px) {
+        display: none;
+    }
+    @media screen and (min-width: 768px){
+        width: 16px;
+        height: 12px;
+        margin-right: 8px;
+    }
+    @media screen and (min-width: 1200px) {
+        margin-left: 30px;
+    }
+}
+
+.contacts__img-phone {
+    width: 10px;
+    height: 16px;
+
+    @media screen and (max-width: 767px) {
+        display: none;
+    }
+
+    @media screen and (min-width: 768px) {
+        margin-right: 8px;
+    }
+}
+
+.contacts__text {
+    font-size: 14px;
+
+    color: $color-text;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    
+}
+   
+.contacts__network {
+    margin-left: 40px;
+
+    @media screen and (min-width: 768px){
+        display: none;
+    }
+}
+
+.contacts__networks-link {
+    display: inline-block;
+
+    position: relative;
+    
+    padding-right: 10px;
+    padding-left: 10px;
+
+    &:last-child {
+        padding-right: 0;
+    }
+    &:first-child {
+        padding-left: 0;
+    }
+
+    
+}
+
+.contacts__network-logo {
+    color: $color-active;
+
+    &:not(:last-child)::after {
+        content: "";
+
+        position: absolute;
+
+        width: 1px;
+        height: 100%;
+        background-color: $color-text;
+    }
+
+    @media screen and (min-width: 768px){
+        display: none;
+    }
+}  
+
+@media screen and (min-width: 768px){
+    .site-nav__link--page::after {
+            content: "";
+    
+            position: absolute;
+    
+            display: block;
+            width: 100%;
+            height: 4px;
+    
+            background: $color-active;
+            border-radius: 2px;
+        }
+}
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+    .site-nav__link--page::after {
+        bottom: -141%;
+    }
+}
+@media screen and (min-width: 768px) and (min-width: 1200px) {
+    .site-nav__link--page::after {
+        bottom: -174%;
+    }
+}
